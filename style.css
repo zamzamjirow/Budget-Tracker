@@ -1,0 +1,22 @@
+h1 {
+    font-size: 40px;
+}
+#add-expense {
+    background-color: lightblue;
+    padding: 20px;
+    margin-top: 20px;
+}
+input {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+}
+.expenses {
+    background-color: lightgray;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+bady {
+    padding: 20px;
+}
