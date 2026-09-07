@@ -3,26 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>My Budget Tracker</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <h1>My Budget Tracker</h1>
+    <header>
+        <h1>My Budget Tracker</h1>
+        <p>Track your income and expenses in one place.</p>
+    </header>
 
-    <p>Track your income and expenses in one place.</p>
+    <main>
 
-    <div class="add-expense-section">
-        <h2>Add Expense</h2>
-        <input type="text" placeholder="Expense name">
-        <input type="number" placeholder="Amount">
-        <input type="text" placeholder="Category">
-    </div>
+        <!-- Add Expense Section -->
+        <section id="add-expense">
+            <h2>Add Expense</h2>
 
-    <div class="expenses-section" id="expense-list">
-        <h2>Your Expenses</h2>
-        <p>No expenses yet</p>
-    </div>
+            <label for="expense-name">Expense Name:</label>
+            <input
+                type="text"
+                id="expense-name"
+                placeholder="e.g. Groceries"
+            >
+
+            <label for="amount">Amount:</label>
+            <input
+                type="number"
+                id="amount"
+                placeholder="e.g. 25"
+            >
+
+            <label for="category">Category:</label>
+            <input
+                type="text"
+                id="category"
+                placeholder="e.g. Food"
+            >
+        </section>
+
+        <!-- Your Expenses Section -->
+        <section class="expenses-placeholder">
+            <h2>Your Expenses</h2>
+            <p>No expenses yet.</p>
+        </section>
+
+    </main>
 
 </body>
 </html>
