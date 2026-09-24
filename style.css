@@ -1,0 +1,436 @@
+```css
+/* =========================================
+   SPENDWISE DASHBOARD
+   Week 4 - CSS Grid & Flexbox
+   ========================================= */
+
+
+/* =========================================
+   1. CSS CUSTOM PROPERTIES
+   ========================================= */
+
+:root {
+    --brand-color: #2563eb;
+    --accent-color: #10b981;
+    --surface-color: #ffffff;
+    --background-color: #f1f5f9;
+    --primary-text: #1e293b;
+    --secondary-text: #64748b;
+    --border-color: #e2e8f0;
+}
+
+
+/* =========================================
+   2. GENERAL STYLES
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--primary-text);
+}
+
+
+/* =========================================
+   3. MAIN DASHBOARD GRID
+   ========================================= */
+
+.dashboard {
+    min-height: 100vh;
+
+    /*
+       CSS GRID is used for the overall
+       dashboard layout.
+    */
+    display: grid;
+
+    grid-template-columns: 240px 1fr;
+}
+
+
+/* =========================================
+   4. SIDEBAR
+   ========================================= */
+
+.sidebar {
+    background-color: var(--surface-color);
+    border-right: 1px solid var(--border-color);
+
+    padding: 25px 15px;
+
+    /*
+       FLEXBOX is used inside the sidebar.
+    */
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    padding: 0 15px 30px;
+}
+
+.logo h2 {
+    margin: 0;
+    color: var(--brand-color);
+}
+
+
+/* Navigation */
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 12px 15px;
+
+    color: var(--secondary-text);
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    transition: background-color 0.2s ease,
+                color 0.2s ease;
+}
+
+.nav-item:hover,
+.nav-item.active {
+    background-color: #eff6ff;
+    color: var(--brand-color);
+}
+
+
+/* =========================================
+   5. MAIN CONTENT
+   ========================================= */
+
+.main-content {
+    padding: 30px;
+    min-width: 0;
+}
+
+
+/* =========================================
+   6. HEADER
+   ========================================= */
+
+.dashboard-header {
+
+    /*
+       FLEXBOX arranges the header items.
+    */
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 35px;
+}
+
+.welcome-text {
+    margin: 0 0 5px;
+    color: var(--secondary-text);
+}
+
+.dashboard-header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+
+/* User profile */
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-profile small {
+    display: block;
+    color: var(--secondary-text);
+    margin-top: 3px;
+}
+
+.user-avatar {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: var(--brand-color);
+    color: white;
+
+    font-weight: bold;
+}
+
+
+/* =========================================
+   7. SECTION HEADING
+   ========================================= */
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.section-heading h2 {
+    margin: 0 0 5px;
+}
+
+.section-heading p {
+    margin: 0;
+    color: var(--secondary-text);
+}
+
+
+/* =========================================
+   8. CARD GRID
+   ========================================= */
+
+.card-grid {
+
+    /*
+       CSS GRID creates the six-card layout.
+    */
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+/* =========================================
+   9. FINANCE CARDS
+   ========================================= */
+
+.finance-card {
+
+    background-color: var(--surface-color);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    /*
+       FLEXBOX arranges the content
+       inside each card.
+    */
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    min-height: 190px;
+
+    /*
+       Micro-interaction.
+       200ms is below the required 250ms.
+    */
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+
+    /*
+       Allows keyboard focus.
+    */
+    outline: none;
+}
+
+
+/* Hover AND keyboard focus */
+
+.finance-card:hover,
+.finance-card:focus {
+    transform: translateY(-4px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =========================================
+   10. CARD CONTENT
+   ========================================= */
+
+.card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background-color: #eff6ff;
+
+    font-size: 22px;
+}
+
+.card-label {
+    color: var(--secondary-text);
+    font-size: 14px;
+}
+
+.card-info {
+    margin-top: 20px;
+}
+
+.card-info h3 {
+    margin: 0;
+    font-size: 25px;
+}
+
+.card-info p {
+    margin: 5px 0 0;
+    color: var(--secondary-text);
+}
+
+.card-footer {
+    margin-top: 20px;
+    color: var(--accent-color);
+    font-size: 13px;
+}
+
+
+/* =========================================
+   11. SUMMARY BOXES
+   ========================================= */
+
+.summary-section {
+
+    margin-top: 25px;
+
+    display: flex;
+
+    gap: 20px;
+}
+
+.summary-box {
+
+    flex: 1;
+
+    background-color: var(--surface-color);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 12px;
+
+    padding: 20px;
+}
+
+.summary-box h2 {
+    margin: 0 0 5px;
+    font-size: 18px;
+}
+
+.summary-box p {
+    color: var(--secondary-text);
+}
+
+.summary-box strong {
+    font-size: 25px;
+}
+
+
+/* =========================================
+   12. RESPONSIVE DESIGN
+   ========================================= */
+
+/*
+   When the screen becomes smaller than 768px,
+   the dashboard becomes one column.
+*/
+
+@media (max-width: 767px) {
+
+    .dashboard {
+        /*
+           Sidebar and main content become
+           a single-column layout.
+        */
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .navigation {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .summary-section {
+        flex-direction: column;
+    }
+}
+
+
+/* =========================================
+   13. DARK THEME - STRETCH GOAL
+   ========================================= */
+
+@media (prefers-color-scheme: dark) {
+
+    :root {
+        --brand-color: #60a5fa;
+        --accent-color: #34d399;
+        --surface-color: #1e293b;
+        --background-color: #0f172a;
+        --primary-text: #f8fafc;
+        --secondary-text: #94a3b8;
+        --border-color: #334155;
+    }
+
+    .nav-item:hover,
+    .nav-item.active {
+        background-color: #1e3a5f;
+    }
+
+    .card-icon {
+        background-color: #1e3a5f;
+    }
+}
+```
