@@ -21,10 +21,8 @@ function calculateRemainingBalance(budget, expenses) {
     return budget - expenses;
 }
 
-let remainingBalance = calculateRemainingBalance(userBudget, totalExpenses);
-
-console.log("Remaining Balance:", remainingBalance);
-function displayBudgetSummary(budget, expenses) {
+function displayBudgetSummary(budget, expenses)
+ {
     let remaining = calculateRemainingBalance(budget, expenses);
 
     console.log("----- SpendWise Budget Summary -----");
