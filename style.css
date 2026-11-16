@@ -1,14 +1,3 @@
-
-/* =========================================
-   SPENDWISE DASHBOARD
-   Week 4 - CSS Grid & Flexbox
-   ========================================= */
-
-
-/* =========================================
-   1. CSS CUSTOM PROPERTIES
-   ========================================= */
-
 :root {
     --brand-color: #2563eb;
     --accent-color: #10b981;
@@ -18,11 +7,6 @@
     --secondary-text: #64748b;
     --border-color: #e2e8f0;
 }
-
-
-/* =========================================
-   2. GENERAL STYLES
-   ========================================= */
 
 * {
     box-sizing: border-box;
@@ -35,37 +19,16 @@ body {
     color: var(--primary-text);
 }
 
-
-/* =========================================
-   3. MAIN DASHBOARD GRID
-   ========================================= */
-
 .dashboard {
     min-height: 100vh;
-
-    /*
-       CSS GRID is used for the overall
-       dashboard layout.
-    */
     display: grid;
-
     grid-template-columns: 240px 1fr;
 }
-
-
-/* =========================================
-   4. SIDEBAR
-   ========================================= */
 
 .sidebar {
     background-color: var(--surface-color);
     border-right: 1px solid var(--border-color);
-
     padding: 25px 15px;
-
-    /*
-       FLEXBOX is used inside the sidebar.
-    */
     display: flex;
     flex-direction: column;
 }
@@ -79,9 +42,6 @@ body {
     color: var(--brand-color);
 }
 
-
-/* Navigation */
-
 .navigation {
     display: flex;
     flex-direction: column;
@@ -92,16 +52,11 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
-
     padding: 12px 15px;
-
     color: var(--secondary-text);
     text-decoration: none;
-
     border-radius: 8px;
-
-    transition: background-color 0.2s ease,
-                color 0.2s ease;
+    transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 .nav-item:hover,
@@ -110,32 +65,17 @@ body {
     color: var(--brand-color);
 }
 
-
-/* =========================================
-   5. MAIN CONTENT
-   ========================================= */
-
 .main-content {
     padding: 30px;
     min-width: 0;
 }
 
-
-/* =========================================
-   6. HEADER
-   ========================================= */
-
 .dashboard-header {
-
-    /*
-       FLEXBOX arranges the header items.
-    */
     display: flex;
-
     justify-content: space-between;
     align-items: center;
-
     margin-bottom: 35px;
+    gap: 20px;
 }
 
 .welcome-text {
@@ -147,9 +87,6 @@ body {
     margin: 0;
     font-size: 28px;
 }
-
-
-/* User profile */
 
 .user-profile {
     display: flex;
@@ -166,29 +103,24 @@ body {
 .user-avatar {
     width: 42px;
     height: 42px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     border-radius: 50%;
-
     background-color: var(--brand-color);
     color: white;
-
     font-weight: bold;
 }
 
-
-/* =========================================
-   7. SECTION HEADING
-   ========================================= */
+.dashboard-section {
+    margin-bottom: 35px;
+    scroll-margin-top: 20px;
+}
 
 .section-heading {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     margin-bottom: 20px;
 }
 
@@ -201,76 +133,30 @@ body {
     color: var(--secondary-text);
 }
 
-
-/* =========================================
-   8. CARD GRID
-   ========================================= */
-
 .card-grid {
-
-    /*
-       CSS GRID creates the six-card layout.
-    */
     display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
 }
 
-
-/* =========================================
-   9. FINANCE CARDS
-   ========================================= */
-
 .finance-card {
-
     background-color: var(--surface-color);
-
     border: 1px solid var(--border-color);
-
     border-radius: 12px;
-
     padding: 20px;
-
-    /*
-       FLEXBOX arranges the content
-       inside each card.
-    */
     display: flex;
     flex-direction: column;
-
     justify-content: space-between;
-
     min-height: 190px;
-
-    /*
-       Micro-interaction.
-       200ms is below the required 250ms.
-    */
-    transition: transform 0.2s ease,
-                box-shadow 0.2s ease;
-
-    /*
-       Allows keyboard focus.
-    */
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
     outline: none;
 }
-
-
-/* Hover AND keyboard focus */
 
 .finance-card:hover,
 .finance-card:focus {
     transform: translateY(-4px);
-
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
 }
-
-
-/* =========================================
-   10. CARD CONTENT
-   ========================================= */
 
 .card-top {
     display: flex;
@@ -281,15 +167,11 @@ body {
 .card-icon {
     width: 45px;
     height: 45px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     border-radius: 10px;
-
     background-color: #eff6ff;
-
     font-size: 22px;
 }
 
@@ -318,30 +200,17 @@ body {
     font-size: 13px;
 }
 
-
-/* =========================================
-   11. SUMMARY BOXES
-   ========================================= */
-
 .summary-section {
-
     margin-top: 25px;
-
     display: flex;
-
     gap: 20px;
 }
 
 .summary-box {
-
     flex: 1;
-
     background-color: var(--surface-color);
-
     border: 1px solid var(--border-color);
-
     border-radius: 12px;
-
     padding: 20px;
 }
 
@@ -358,23 +227,134 @@ body {
     font-size: 25px;
 }
 
+/* Expense forms */
 
-/* =========================================
-   12. RESPONSIVE DESIGN
-   ========================================= */
+#budget-form,
+#expense-form {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 22px;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 16px;
+}
 
-/*
-   When the screen becomes smaller than 768px,
-   the dashboard becomes one column.
-*/
+#budget-form label,
+#expense-form label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--primary-text);
+    align-self: end;
+}
+
+#budget-form input,
+#expense-form input,
+#expense-form select {
+    width: 100%;
+    min-width: 0;
+    height: 44px;
+    padding: 0 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--background-color);
+    color: var(--primary-text);
+    font-size: 14px;
+    outline: none;
+}
+
+#budget-form input:focus,
+#expense-form input:focus,
+#expense-form select:focus {
+    border-color: var(--brand-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+#budget-form button,
+#expense-form button {
+    min-height: 44px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--brand-color);
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.25s ease;
+    grid-column: 1 / -1;
+}
+
+#budget-form button:hover,
+#expense-form button:hover {
+    opacity: 0.85;
+}
+
+#budget-message {
+    margin: 15px 0 25px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--accent-color);
+}
+
+/* Expense records table */
+
+#expense-records h2 {
+    margin-bottom: 15px;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 15px;
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 550px;
+}
+
+th,
+td {
+    padding: 15px 18px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background-color: var(--background-color);
+    color: var(--primary-text);
+    font-size: 13px;
+}
+
+td {
+    color: var(--secondary-text);
+    font-size: 14px;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background-color: var(--background-color);
+}
+
+/* Responsive design */
+
+@media (max-width: 1000px) {
+    .card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
 
 @media (max-width: 767px) {
-
     .dashboard {
-        /*
-           Sidebar and main content become
-           a single-column layout.
-        */
         grid-template-columns: 1fr;
     }
 
@@ -405,15 +385,16 @@ body {
     .summary-section {
         flex-direction: column;
     }
+
+    #budget-form,
+    #expense-form {
+        grid-template-columns: 1fr;
+    }
 }
 
-
-/* =========================================
-   13. DARK THEME - STRETCH GOAL
-   ========================================= */
+/* Dark theme */
 
 @media (prefers-color-scheme: dark) {
-
     :root {
         --brand-color: #60a5fa;
         --accent-color: #34d399;
@@ -433,4 +414,3 @@ body {
         background-color: #1e3a5f;
     }
 }
-```
