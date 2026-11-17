@@ -1,25 +1,57 @@
-### 1. Improvements Made to SpendWise This Week
+# SpendWise - Budget Tracker
 
-This week, I improved the SpendWise budget tracker by adding more functionality to the dashboard. Users can now enter a monthly budget, add expenses, view their expense records in a table, and see their remaining balance. I also improved the layout and styling to make the application easier to use.
+## Project Description
 
-### 2. How Conditionals Are Used in the Project
+SpendWise is a budget tracking web application built to help users manage their monthly budgets and keep track of their expenses.
 
-I used `if` and `else` statements to check different conditions in the application. For example, when a user enters an expense, the application checks whether the amount is valid. I also used conditionals to compare total expenses with the monthly budget and display feedback when the user is close to or has exceeded their budget.
+Users can set a monthly budget, record expenses, view expense records, monitor their total spending, and check their remaining balance.
 
-### 3. How Arrays Are Used to Store Data
+The application provides a simple dashboard that makes it easier to understand and manage personal finances.
 
-I used an array called `expenses` to store expense records. Each expense contains information such as its name, category, and amount. When a user adds a new expense, it is added to the array using `push()`. This allows the application to keep track of multiple expenses.
+## Technologies Used
 
-### 4. How the DOM Is Updated
+- HTML5
+- CSS3
+- JavaScript
+- Git and GitHub
+- Netlify
 
-I used DOM manipulation to update the information displayed on the dashboard. JavaScript selects HTML elements and changes their content whenever the user adds an expense or changes the budget. For example, the expense table, total spending, and remaining balance update automatically.
+## GitHub Repository Information
 
-### 5. How User Interactions Are Handled Through Events
+**Repository Name:** Budget-Tracker
 
-I used event listeners to respond to user actions. For example, when a user submits the expense form, JavaScript collects the information, adds the expense to the array, and updates the dashboard. I also added an event listener to the budget form so users can change their monthly budget.
+**GitHub Repository:** https://github.com/zamzamjirow/Budget-Tracker
 
-### 6. Challenges Encountered and How They Were Resolved
+## Live Website
 
-One challenge I encountered was making sure the expense records and dashboard figures updated correctly whenever a new expense was added. I resolved this by using JavaScript functions to calculate totals and refresh the displayed information.
+**Netlify URL:** https://spendwise-expense-manager.netlify.app/
 
-I also experienced Git and GitHub issues when trying to upload my project because my local repository and GitHub repository had different commits. I resolved this by fixing the merge conflicts, completing the Git rebase, and successfully pushing my changes to GitHub.
+The application is publicly accessible through the Netlify link above.
+
+## Deployment Process Summary
+
+I deployed SpendWise using GitHub and Netlify.
+
+First, I uploaded my project files to a public GitHub repository. I then connected the GitHub repository to Netlify and selected the main branch for deployment.
+
+Since SpendWise was built using HTML, CSS, and JavaScript, I did not need a build command. Netlify used the project files to publish the website.
+
+I also changed the default Netlify site name to a name related to my project.
+
+## Challenges Encountered During Deployment
+
+One challenge I experienced was pushing my updated project to GitHub because my local repository and remote repository had different commits. This resulted in Git merge conflicts.
+
+I resolved the conflicts, completed the rebase process, and successfully pushed my project to GitHub.
+
+Another challenge was finding an available Netlify site name because several names I tried were already taken. I resolved this by choosing another available name.
+
+## Lessons Learned
+
+Through this assignment, I learned how to deploy a website using GitHub and Netlify.
+
+I also learned how to connect a GitHub repository to Netlify, configure a deployment, choose a custom website name, and publish a website online.
+
+I gained a better understanding of continuous deployment and how changes pushed to GitHub can automatically update a live website.
+
+This assignment helped me understand how to take a web application from development on my local computer to a publicly accessible website.
