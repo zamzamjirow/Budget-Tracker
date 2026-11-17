@@ -38,6 +38,20 @@ Since SpendWise was built using HTML, CSS, and JavaScript, I did not need a buil
 
 I also changed the default Netlify site name to a name related to my project.
 
+I created a `netlify.toml` configuration file to specify the publish directory and configure a fallback redirect to `index.html`.
+
+## Continuous Deployment Verification
+
+I tested continuous deployment by making a visible change to the dashboard heading, changing it to "SpendWise Budget Tracker".
+
+I committed the change and pushed it to the main branch of my GitHub repository.
+
+Netlify automatically detected the GitHub update and started a new deployment. After the deployment was published, I opened the live website and confirmed that the updated dashboard heading was displayed.
+
+I also pushed the `netlify.toml` configuration file to GitHub. Netlify automatically detected this update and successfully published the new deployment.
+
+This confirmed that changes pushed to the GitHub repository were automatically deployed to the live website without manually uploading the project files to Netlify.
+
 ## Challenges Encountered During Deployment
 
 One challenge I experienced was pushing my updated project to GitHub because my local repository and remote repository had different commits. This resulted in Git merge conflicts.
